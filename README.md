@@ -89,19 +89,38 @@ Open-Meteo (Free)
 https://open-meteo.com/
 
 📁 5. Folder Structure
-data/
-  raw/
-  processed/
+project_root/
+│
+├── data_lake/
+│   ├── raw/
+│   ├── silver/
+│   └── gold/
+│
+├── dags/
+│
+├── scripts/
+│   ├── ingest_traffic.py
+│   ├── ingest_aqi.py
+│   ├── ingest_weather.py
+│   ├── transform_raw_to_silver.py
+│   └── transform_silver_to_gold.py
+│
+├── warehouse/
+│   ├── create_tables.sql
+│   └── load_gold_data.py
+│
+├── models/
+│   ├── fact_city_conditions.sql
+│   ├── dim_location.sql
+│   ├── dim_weather.sql
+│   └── dim_pollution.sql
+│
+├── great_expectations/
+│
+├── dashboards/
+│
+└── README.md
 
-src/
-  ingestion/
-  processing/
-  analytics/
-
-docs/
-notebooks/
-config/
-scripts/
 
 📝 6. How to Run the Project
 git clone https://github.com/<your-username>/city-traffic-pollution-analytics
